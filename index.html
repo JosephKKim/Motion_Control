@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="NeuralRecon reconstructs 3D scene geometry from a monocular video with known camera poses in real-time. Accepted in CVPR 2021 as oral."/>
-    <title>MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes</title>
+    <meta name="description" content="Exploring latent space of VAE for control of human motion"/>
+    <title>3D Human Action Control in Latent Space of Transformer VAE</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="docs/css/bootstrap-4.4.1.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <style>
       body {
@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h2 style="font-size:30px;">MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes</h2>
+            <h2 style="font-size:30px;">3D Human Action Control in Latent Space of Transformer VAE</h2>
             <!-- <h4 style="color:#6e6e6e;"> CVPR 2021</h4>
             <h5 style="color:#6e6e6e;"> (Oral Presentation and Best Paper Candidate)</h5> -->
             <!-- <hr>
@@ -78,11 +78,14 @@
             <img class="img-fluid" src="images/Figure_1_4.png" alt="overview">
             <hr style="margin-top:0px">
           <p class="text-justify">
-              We present MosaicMVS, a novel learning-based depth estimation framework for a mosaic-based omnidirectional multi-view stereo (MVS) camera setup. 
-              It uses a regular field of view (FOV) MVS network for an omnidirectional imaging setup with explicit consideration of hypothetical voxel-wise FOV overlaps. 
-              The resulting depth predictions are accurate and agree on the omnidirectional multi-view geometry. 
-              Unlike existing MVS setups, MosaicMVS camera setup can be easily applied to omnidirectional indoor scenes without having to account for constraints such as intricate epipolar constraints and the distortion of omnidirectional cameras. 
-              We validate the effectiveness of our framework on a new challenging indoor dataset in terms of depth estimation, reconstruction, and view synthesis. Our framework outperforms the state-of-the-art methods in a large margin in all test scenes.
+            Action-conditioned transformer VAE has shown its ability to generate realistic and diverse human motion sequences. 
+            Taking a step further, we want to control the specific body part of the generated human motions, thereby achieving more degrees of freedom and diversity in human actions. 
+            In order to attain the control of the body part, we acquire attribute vectors through low-rank factorization and null space projection. 
+            However, we empirically found that the attribute vector of each part is tangled with each other due to the posterior collapse, which is a phenomenon that VAE models are found to ignore the latent variables, especially when using flexible generators. 
+            We mitigate this problem using scheduling schemes for KL-term ($\beta$) among various attempts to address the posterior collapse. Furthermore, to enhance the controllability, we propose the data augmentation which encourages the change rate of motions to be diverse. 
+            We evaluate our approach to UESTC and HumanAct12 datasets in the class conditional settings. We also show that manipulated actions using our method are plausible and human-like. 
+            In addition, we show that we can apply our control on the actions, generated in the unconditional settings, which reveals potential for the future research. 
+            To the best of our knowledge, our work is the first for directly controlling motions in the latent space without using any other modalities. 
           </p>
         </div>
       </div>
@@ -96,7 +99,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h3>Depth estimation showcases</h3>
+            <h3>Action control showcases</h3>
             <hr style="margin-top:0px">
             <div id="Slider3"></div>
               <script>
@@ -180,7 +183,7 @@
   <br>
 
 
-  <!-- reconstruction showcases -->
+  <!-- reconstruction showcases
   <section>
     <div class="container">
       <div class="row">
@@ -204,7 +207,7 @@
         <!-- <div class="col-12 text-center">
             <h3>Reconstruction showcases</h3>
             <hr style="margin-top:0px"> -->
-            <div class="embed-responsive embed-responsive-16by9">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
                 <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://sketchfab.com/playlists/embed?collection=5a49cab0570e4d9fb610978a640fe080&autostart=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>
             <br>
@@ -217,7 +220,7 @@
       </div>
     </div>
   </section>
-  <br>
+  <br> --> -->
 
 
 
