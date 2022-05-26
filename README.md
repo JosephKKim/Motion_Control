@@ -12,6 +12,15 @@ The environment for this repository is the same as the [ACTOR](https://github.co
 
 ## Usage
 
+
+## References
+We referenced the repos below for the code.
+
+* [ACTOR](https://github.com/Mathux/ACTOR)
+* [LowRankGAN](https://github.com/zhujiapeng/LowRankGAN)
+
+
+
 ## License
 This code is distributed under an [MIT LICENSE](LICENSE).
 
