@@ -5,8 +5,7 @@
 <!-- === Header Starts === -->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>LowRankGAN</title>
+  <title>3D Human Action Control in Latent Space of Transformer VAE</title>
 
   <link href="./assets/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/font.css" rel="stylesheet" type="text/css">
@@ -15,7 +14,7 @@
 <!-- === Header Ends === -->
 
 
-<body>
+<body bgcolor="antiquewhite">
 
 
 <!-- === Home Section Starts === -->
@@ -23,11 +22,11 @@
   <!-- === Title Starts === -->
   <div class="header">
     <div class="title", style="padding-top: 25pt;">
-      Low-Rank Subspaces in GANs
+      3D Human Action Control in Latent Space of Transformer VAE
     </div>
   </div>
   <!-- === Title Ends === -->
-  <div class="author">
+  <!-- <div class="author">
     <a href="https://zhujiapeng.github.io/" target="_blank">Jiapeng Zhu</a><sup>1</sup>,&nbsp;
     <a href="https://dblp.org/pid/20/9594.html" target="_blank">Ruili Feng</a><sup>2,3</sup>,&nbsp;
     <a href="http://shenyujun.github.io/" target="_blank">Yujun Shen</a><sup>4</sup>,&nbsp;
@@ -43,9 +42,9 @@
     <br/>
     <sup>3</sup>University of Science and Technology of China &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <sup>4</sup>ByteDance Inc.
-  </div>
+  </div> -->
   <div class="link">
-    [<a href="https://arxiv.org/pdf/2106.04488.pdf" target="_blank">Paper</a>]
+    <!-- [<a href="https://arxiv.org/pdf/2106.04488.pdf" target="_blank">Paper</a>] -->
     [<a href="https://github.com/zhujiapeng/LowRankGAN" target="_blank">Code</a>]
     [<a href="https://www.youtube.com/watch?v=WltRPecDq10" target="_blank">Demo</a>]
   </div>
@@ -60,20 +59,14 @@
 <div class="section">
   <div class="title">Overview</div>
   <div class="body">
-    In this work, we propose <b>LowRankGAN</b> by introducing the <i>low-rank subspaces</i> of a
-    pre-trained generator, which enables local control of the GAN generation.
-    It mainly consists of three steps.
-    First, we relate the image region (e.g., eyes as the foreground and the rest as the background for a face image)
-    to the latent space via computing the Jacobian matrix on a pre-trained generator.
-    Second, we perform low-rank factorization on the resulting Jacobian to get
-    the principal space and the null space for the foreground and the background, respectively.
-    Finally, we project the principal space of the foreground onto the null space of the background,
-    resulting in the so-called <i>low-rank subspace</i>.
-    Through altering the latent codes along the directions within the low-rank subspace,
-    we manage to precisely control the foreground region yet barely affect the background region.
-    Interestingly, the subspaces derived from local areas in one image
-    can be convincingly applicable to other images.
-    Moreover, our LowRankGAN is highly robust to the image region for obtaining those subspaces.
+    Action-conditioned transformer VAE has shown its ability to generate realistic and diverse human motion sequences. 
+    Taking a step further, we want to control the specific body part of the generated human motions, thereby achieving more degrees of freedom and diversity in human actions. 
+    In order to attain the control of the body part, we acquire attribute vectors through low-rank factorization and null space projection. 
+    However, we empirically found that the attribute vector of each part is tangled with each other due to the posterior collapse, which is a phenomenon that VAE models are found to ignore the latent variables, especially when using flexible generators. 
+    We mitigate this problem using scheduling schemes for KL-term(&beta;) among various attempts to address the posterior collapse. Furthermore, to enhance the controllability, we propose the data augmentation which encourages the change rate of motions to be diverse. 
+    We evaluate our approach to UESTC and HumanAct12 datasets in the class conditional settings. We also show that manipulated actions using our method are plausible and human-like. 
+    In addition, we show that we can apply our control on the actions, generated in the unconditional settings, which reveals potential for the future research. 
+    To the best of our knowledge, our work is the first for directly controlling motions in the latent space without using any other modalities.
   </div>
 </div>
 <!-- === Overview Section Ends === -->
@@ -171,7 +164,7 @@
 
 <!-- === Reference Section Starts === -->
 <div class="section">
-  <div class="bibtex">BibTeX</div>
+  <!-- <div class="bibtex">BibTeX</div>
 <pre>
   @inproceedings{zhu2021lowrankgan,
     title     = {Low-Rank Subspaces in {GAN}s},
@@ -180,7 +173,7 @@
     year      = {2021}
   }
 
-</pre>
+</pre> -->
 
 
 <div class="ref">Related Work</div>
