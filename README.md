@@ -1,4 +1,5 @@
 # 3D Human Action Control in Latent Space of Transformer VAE
+[ProjectPage](https://anonymous.4open.science/w/Motion_Control-3229/)
 
 ![image](./docs/assets/UESTC.png)
 **Figure:** *Control human motion directly from latent space of Transformer-VAE.*
