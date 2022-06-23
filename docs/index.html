@@ -76,6 +76,7 @@
 <div class="section">
 <div class="title">Results</div>
     <h3> Conditional Results</h3>
+    In conditional setting, we can perform part-wise control. Below, we show arm and leg control repectively.
     <p style="margin-top: 10pt; text-align:center; font-size:20px"> Arm <p>
     <table width="100%" style="margin: 0pt auto; text-align: center; border-collapse: separate; border-spacing: 5pt;">
       <tr>
@@ -89,6 +90,11 @@
         <td><img src="./assets/plus_page_arm.gif" width="90%"></img></td>
       </tr>
     </table>
+    In the given class shown above, we can see that the leftmost SMPL model is raising its arm more than that in the middle(Original z). Likewise, when we move latent z to the 
+    opposite direction where it makes model to raise its arm, we can see that the right most figure is merely raising its arm. 
+    <br>
+    <br>
+    We can also see that body parts other than arm is identical in those 3 figures.
 
     <p style="margin-top: 10pt; text-align:center; font-size:20px"> Leg<p>
     <table width="100%" style="margin: 0pt auto; text-align: center; border-collapse: separate; border-spacing: 5pt;">
@@ -105,7 +111,11 @@
         
       </tr>
     </table>
-
+    In the figures above, when we compare left and right figures with the middle figure(Original z), we can see that angle between legs is changing. Left figure shows the result when moved the
+    latent into the leg widening direction. Right figure shows the result when we move to the opposite direction where it narrows the leg of the SMPL model.
+    <br>
+    <br>
+    Please notice that parts other than leg is identical in the 3 figures above.
 
     <div class="body">
       <h3> Unconditional Results</h3>
@@ -114,42 +124,7 @@
       <br>
       <p style="text-align:center;"><img src="./assets/uncond.gif" alt = "unconditional result 1", width="90%"></p>
       <p style="text-align:center;"><img src="./assets/uncond2.gif" alt = "unconditional result 2", width="90%"></p>
-      <!--
-    <p style="margin-top: 10pt; text-align:center; font-size:20px">Church (StyleGAN2)<p>
-    <table width="100%" style="margin: 0pt auto; text-align: center; border-collapse: separate; border-spacing: 5pt;">
-      <tr>
-        <td><b>Sky</b></td>
-        <td><img src="./assets/church_sky.gif" width="90%"></img></td>
-      </tr>
-      <tr>
-        <td><b>Grass</b></td>
-        <td><img src="./assets/church_grass.gif" width="90%"></img></td>
-      </tr>
-    </table>
-
-    <p style="margin-top: 10pt; text-align:center; font-size:20px">Car (StyleGAN2)<p>
-    <table width="100%" style="margin: 0pt auto; text-align: center; border-collapse: separate; border-spacing: 5pt;">
-      <tr>
-        <td><b>Body</b></td>
-        <td><img src="./assets/car_body.gif" width="90%"></img></td>
-      </tr>
-      <tr>
-        <td><b>Grass</b></td>
-        <td><img src="./assets/car_ground.gif" width="90%"></img></td>
-      </tr>
-    </table>
-
-    <p style="margin-top: 10pt; text-align:center; font-size:20px">Various Categories on BigGAN<p>
-    <table width="100%" style="margin: 0pt auto; text-align: center; border-collapse: separate; border-spacing: 5pt;">
-      <tr>
-        <td><b>Pose</b></td>
-        <td><img src="./assets/biggan_pose.gif" width="90%"></img></td>
-      </tr>
-      <tr>
-        <td><b>Size</b></td>
-        <td><img src="./assets/biggan_size.gif" width="90%"></img></td>
-      </tr>
-    </table>
+     
 
 
     <p style="margin-top: 10pt; text-align:center; font-size:20px">Full Demo Video<p>
@@ -178,79 +153,32 @@
   }
 
 </pre> -->
-
-<!-- 
 <div class="ref">Related Work</div>
+<div class="citation">
+  <div class="image"><img src="./assets/teaser_dep.jpg"></div>
+  <div class="comment">
+    <a href="https://arxiv.org/pdf/2106.04488.pdf" target="_blank">
+      Jiapeng Zhu, Ruili Feng, Yujun Shen, Deli Zhao, Zhengjun Zha, Jingren Zhou, Qifeng Chen <br>
+      Low-Rank Subspaces in GANs. <br>
+      Conference on Neural Information Processing Systems (NeurIPS) 2021.</a><br>
+    <b>Comment:</b>
+    Controlling images in latetent space only modifiying the region of interest, while maintaining the rest region.
+    <br>
+    We also burrowed project page format from the authors of this paper (Thanks!).
+  </div>
+</div>
 
 <div class="citation">
-  <div class="image"><img src="./assets/spectual.jpg"></div>
+  <div class="image"><img src="./assets/ACTOR_teaser.png"></div>
   <div class="comment">
-    <a href="https://arxiv.org/abs/1812.01161/" target="_blank">
-      Ramesh, Aditya and Choi, Youngduck and LeCun, Yann.
-      A spectral regularizer for unsupervised disentanglement.
-      ICML 2019.</a><br>
+    <a href="https://mathis.petrovich.fr/actor/" target="_blank">
+      Mathis Petrovich Michael J. Black, and G&uuml;l Varol <br>
+      Action-Conditioned 3D Human Motion Synthesis with Transformer VAE. <br>
+      ICCV 2021.</a><br>
     <b>Comment:</b>
-    Explores the leading right-singular vectors of the Jacobian of the generator.
+    Generates action-conditioned realistic and diverse human motion sequences using Transformer-based VAE architecture
   </div>
 </div>
-<div class="citation">
-  <div class="image"><img src="./assets/interfacegan.jpg"></div>
-  <div class="comment">
-    <a href="https://genforce.github.io/interfacegan/" target="_blank">
-      Y. Shen, J. Gu, X. Tang, B. Zhou.
-      Interpreting the Latent Space of GANs for Semantic Face Editing.
-      CVPR 2020.</a><br>
-    <b>Comment:</b>
-    Interprets the face semantics emerging in the latent space of GANs with the help of off-the-shelf classifiers.
-  </div>
-</div>
-<div class="citation">
-  <div class="image"><img src="./assets/higan.jpg"></div>
-  <div class="comment">
-    <a href="https://genforce.github.io/higan/" target="_blank">
-      C. Yang, Y. Shen, B. Zhou.
-      Semantic Hierarchy Emerges in Deep Generative Representations for Scene Synthesis.
-      IJCV 2020.</a><br>
-    <b>Comment:</b>
-    Explores the emergent semantic hierarchy in scene synthesis models.
-  </div>
-</div>
-<div class="citation">
-  <div class="image"><img src="./assets/gan_latent_discovery.jpg"></div>
-  <div class="comment">
-    <a href="https://github.com/anvoynov/GanLatentDiscovery" target="_blank">
-      A. Voynov and A. Babenko.
-      Unsupervised Discovery of Interpretable Directions in the GAN Latent Space.
-      ICML 2020.</a><br>
-    <b>Comment:</b>
-    Interprets meaningful directions in GAN latent space by unsupervisedly training a direction reconstructor.
-  </div>
-</div>
-<div class="citation">
-  <div class="image"><img src="./assets/ganspace.jpg"></div>
-  <div class="comment">
-    <a href="https://github.com/harskish/ganspace" target="_blank">
-      E. Härkönen, A. Hertzmann, J. Lehtinen, S. Paris.
-      GANSpace: Discovering Interpretable GAN Controls.
-      NeurIPS 2020.</a><br>
-    <b>Comment:</b>
-    Unsupervisedly discovers the latent semantics learned by GANs using PCA.
-  </div>
-</div>
-<div class="citation">
-  <div class="image"><img src="./assets/sefa.jpg"></div>
-  <div class="comment">
-    <a href="https://github.com/harskish/ganspace" target="_blank">
-      Shen, Yujun and Zhou, Bolei.
-      Closed-Form Factorization of Latent Semantics in GANs.
-      CVPR2021.</a><br>
-    <b>Comment:</b>
-    Unsupervisedly factorizes the latent semantics in GANs.
-  </div>
-</div> -->
-
-<!-- === Reference Section Ends === -->
-
 
 </body>
 </html>
