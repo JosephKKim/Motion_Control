@@ -1,10 +1,10 @@
-# 3D Human Action Control in Latent Space of Transformer VAE
+# Controlling 3D Human Action with Transformer Variational Autoencoder in Latent Space
 [ProjectPage](https://josephkkim.github.io/Motion_Control/)
 
 ![image](./docs/assets/UESTC.png)
 **Figure:** *Control human motion directly from latent space of Transformer-VAE.*
 
-> **3D Human Action Control in Latent Space of Transformer VAE** <br>
+> **Controlling 3D Human Action with Transformer Variational Autoencoder in Latent Space** <br>
 
 In this repository, we present method for **controlling human motion** from previously developed Transformer-VAE model ([ACTOR](https://github.com/Mathux/ACTOR)). With this method you can control human motion through discovered direction using **low-rank factorization**. We also proposed scheduling scheme, and data augmetation for learning latent space with more active units. We show some interesting results below.
 
